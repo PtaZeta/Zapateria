@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCarritoRequest;
 use App\Http\Requests\UpdateCarritoRequest;
 use App\Models\Carrito;
 
+
 class CarritoController extends Controller
 {
     /**

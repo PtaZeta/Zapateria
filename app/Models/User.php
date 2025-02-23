@@ -57,4 +57,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Factura::class);
     }
+
+    public function totalEnCarrito()
+    {
+        return $this->carritos()->sum('cantidad');
+    }
 }
