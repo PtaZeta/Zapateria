@@ -45,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function zapatos()
+    {
+        return $this->belongsToMany(Zapato::class, 'carritos')
+            ->withPivot('cantidad')
+            ->withTimestamps();
+    }
+
+    public function facturas()
+    {
+        return $this->hasMany(Factura::class);
+    }
 }
