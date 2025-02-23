@@ -17,7 +17,9 @@ class ZapatoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'codigo' => $this->faker->unique()->ean13(),
+            'denominacion' => $this->faker->words(3, true),
+            'precio' => $this->faker->randomFloat(2, 10, 500),
         ];
     }
 }
