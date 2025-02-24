@@ -22,8 +22,20 @@
                         <td class="border p-2">{{ $item['cantidad'] }}</td>
                         <td class="border p-2">{{ number_format($item['precio'] * $item['cantidad'], 2) }} €</td>
                         <td class="border p-2">
-                            <button wire:click="incrementarCantidad({{ $id }})" class="px-2 py-1 bg-green-500 text-white rounded">+</button>
-                            <button wire:click="decrementarCantidad({{ $id }})" class="px-2 py-1 bg-red-500 text-white rounded">-</button>
+                            <button wire:click="incrementarCantidad({{ $id }})"
+                                class="px-3 py-2 bg-green-600 text-white font-bold rounded-lg shadow-md
+                                    hover:bg-green-700 transition-all duration-200 ease-in-out
+                                    active:scale-95">
+                                +
+                            </button>
+
+                            <button wire:click="decrementarCantidad({{ $id }})"
+                                class="px-3 py-2 bg-red-600 text-white font-bold rounded-lg shadow-md
+                                    hover:bg-red-700 transition-all duration-200 ease-in-out
+                                    active:scale-95">
+                                -
+                            </button>
+
                         </td>
                     </tr>
                 @endforeach
@@ -34,6 +46,10 @@
 
         <button wire:click="vaciarCarrito" class="mt-4 px-4 py-2 bg-gray-700 text-white rounded">
             Vaciar carrito
+        </button>
+
+        <button wire:click="realizarPedido" class="mt-4 px-4 py-2 bg-green-700 text-white rounded">
+            Realizar pedido
         </button>
     @endif
 </div>

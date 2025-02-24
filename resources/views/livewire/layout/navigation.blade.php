@@ -20,19 +20,23 @@ new class extends Component
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" wire:navigate>
+                    <a href="{{ route('welcome') }}" wire:navigate>
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')" wire:navigate>
                         {{ __('Inicio') }}
                     </x-nav-link>
 
                     <!-- Nuevo botón para ir a zapatos -->
                     <x-nav-link :href="route('zapatos.index')" :active="request()->routeIs('zapatos.index')" wire:navigate>
                         {{ __('Zapatos') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('facturas.index')" :active="request()->routeIs('facturas.index')" wire:navigate>
+                        {{ __('Facturas') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -96,6 +100,10 @@ new class extends Component
             <!-- Botón Zapatos en menú móvil -->
             <x-responsive-nav-link :href="route('zapatos.index')" :active="request()->routeIs('zapatos.index')" wire:navigate>
                 {{ __('Zapatos') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('facturas.index')" :active="request()->routeIs('facturas.index')" wire:navigate>
+                {{ __('Facturas') }}
             </x-responsive-nav-link>
         </div>
 

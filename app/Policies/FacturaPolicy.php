@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Factura;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
+use phpDocumentor\Reflection\PseudoTypes\True_;
 
 class FacturaPolicy
 {
@@ -13,7 +14,7 @@ class FacturaPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,7 +22,7 @@ class FacturaPolicy
      */
     public function view(User $user, Factura $factura): bool
     {
-        return false;
+        return $factura->user_id === $user->id;
     }
 
     /**

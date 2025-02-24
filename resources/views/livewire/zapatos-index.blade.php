@@ -17,8 +17,9 @@
                     <td class="border p-2">{{ $zapato->denominacion }}</td>
                     <td class="border p-2">{{ $zapato->precio }} €</td>
                     <td class="border p-2">
-                        <button wire:click="añadirAlCarrito({{ $zapato->id }})" class="px-3 py-1 bg-blue-500 text-white rounded">
-                            Añadir al carrito
+                        <button wire:click="añadirAlCarrito({{ $zapato->id }})"
+                            class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                            🛒 Añadir al carrito
                         </button>
                     </td>
                 </tr>
